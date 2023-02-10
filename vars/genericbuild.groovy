@@ -11,7 +11,7 @@ node {
             sh 'pwd'
             sh 'rm -rf ConsoleApp1/bin'
             sh 'rm -rf ConsoleApp1/obj'
-            sh 'dotnet build ConsoleApp1'
+            sh 'dotnet build " + config.target
             echo 'Building peter new feature'
             releasenotes(changes:"true")
         } catch (ex) {
